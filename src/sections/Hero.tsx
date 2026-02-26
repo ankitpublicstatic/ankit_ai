@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
 import { Rocket, Bot, Zap, DollarSign } from 'lucide-react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
   const [email, setEmail] = useState('');
+  const navigate = useNavigate();
 
   const badges = [
     { icon: Rocket, text: 'Ship in Minutes' },
@@ -84,14 +86,14 @@ const Hero = () => {
                 className="w-full px-6 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
               />
             </div>
-            <motion.a
-              href="/contact"
+            <motion.button
+              onClick={() => navigate('/contact')}
               whileHover={{ scale: 1.02, textShadow: "0px 0px 8px rgb(255,255,255)" }}
               whileTap={{ scale: 0.98 }}
               className="w-full block px-6 py-4 rounded-xl btn-primary-gradient text-white font-semibold hover:opacity-95 transition-all shadow-[0_4px_20px_0_rgba(168,85,247,0.4)] cursor-pointer"
             >
               Get Access - Contact Us
-            </motion.a>
+            </motion.button>
           </motion.div>
 
           {/* Trusted By Marquee */}

@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const CTA = () => {
+  const navigate = useNavigate();
   return (
     <section className="py-24 bg-gradient-to-br from-indigo-900 via-slate-900 to-indigo-950 relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-full bg-indigo-500/10 blur-[100px] pointer-events-none" />
@@ -25,14 +27,14 @@ const CTA = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.5 }}
             >
-              <motion.a
+              <motion.button
+                onClick={() => navigate('/contact')}
                 whileHover={{ scale: 1.05, textShadow: "0px 0px 8px rgb(79,70,229)" }}
                 whileTap={{ scale: 0.95 }}
-                href="/contact"
                 className="inline-flex items-center px-8 py-4 rounded-xl bg-indigo-600 text-white font-bold hover:bg-indigo-500 shadow-lg shadow-indigo-600/25 transition-all cursor-pointer"
               >
                 Book a Consultation
-              </motion.a>
+              </motion.button>
             </motion.div>
           </motion.div>
         </div>

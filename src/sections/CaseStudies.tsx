@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import { ShoppingCart, Landmark, Truck } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const CaseStudies = () => {
+    const navigate = useNavigate();
     const cases = [
         {
             icon: ShoppingCart,
@@ -49,14 +51,14 @@ const CaseStudies = () => {
                                 A glimpse into the custom architectures we engineer for our enterprise partners across major verticals.
                             </p>
                         </div>
-                        <motion.a
-                            href="/contact"
+                        <motion.button
+                            onClick={() => navigate('/contact')}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="inline-flex items-center px-6 py-3 rounded-lg bg-white border border-slate-200 text-slate-700 font-semibold hover:border-indigo-300 hover:text-indigo-600 transition-colors shadow-sm whitespace-nowrap"
                         >
                             Discuss Your Use Case
-                        </motion.a>
+                        </motion.button>
                     </motion.div>
 
                     {/* Grid */}

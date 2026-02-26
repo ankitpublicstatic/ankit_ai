@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import { Brain, Network, Workflow, Eye, Code2, Zap } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Models = () => {
+  const navigate = useNavigate();
   const modelCategories = [
     {
       title: 'Frontier & Heavyweight Models',
@@ -162,14 +164,14 @@ const Models = () => {
               <p className="text-gray-600 mb-8">
                 Build intelligent, multi-agent workflows backed by frontier models in minutes.
               </p>
-              <motion.a
+              <motion.button
+                onClick={() => navigate('/contact')}
                 whileHover={{ scale: 1.05, textShadow: "0px 0px 8px rgb(79,70,229)" }}
                 whileTap={{ scale: 0.95 }}
-                href="/contact"
                 className="inline-flex items-center px-8 py-4 rounded-xl btn-primary-gradient text-white font-semibold hover:opacity-95 transition-all shadow-[0_4px_20px_0_rgba(79,70,229,0.4)] cursor-pointer"
               >
                 Get Started
-              </motion.a>
+              </motion.button>
             </motion.div>
           </div>
         </div>

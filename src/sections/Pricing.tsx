@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import { Check, Zap, Users, Building2 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Pricing = () => {
+  const navigate = useNavigate();
   const tiers = [
     {
       name: 'Proof of Concept (PoC)',
@@ -97,14 +99,14 @@ const Pricing = () => {
                     </li>
                   ))}
                 </ul>
-                <motion.a
+                <motion.button
+                  onClick={() => navigate('/contact')}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  href="/contact"
                   className={`w-full block text-center py-4 rounded-xl font-semibold transition-all ${tier.popular ? 'bg-indigo-600 text-white hover:bg-indigo-500 shadow-lg shadow-indigo-600/25' : 'bg-white/10 text-white hover:bg-white/20'}`}
                 >
                   Book Consultation
-                </motion.a>
+                </motion.button>
               </motion.div>
             ))}
           </div>
